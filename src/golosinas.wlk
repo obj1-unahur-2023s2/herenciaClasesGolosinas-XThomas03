@@ -56,7 +56,7 @@ class Caramelo {
 }
 class CarameloRellenoDeChocolate inherits Caramelo{
 	override method  mordisco() {sabor = chocolate}
-	override method precio() {return 13}
+	override method precio() {return  super() +1 }
 	
 }
 
@@ -93,8 +93,12 @@ class Oblea {
 }
 class ObleaCrujiente inherits Oblea{
 	var mordiscos = 0
-	method estaDebil(){return mordiscos < 3}
-	 
+	method estaDebil(){return mordiscos > 3}
+	 override mordisco(){if(self.estaDebil()){
+	 	super()
+	 }
+	 	
+	 }
 }
 
 class Chocolatin {
