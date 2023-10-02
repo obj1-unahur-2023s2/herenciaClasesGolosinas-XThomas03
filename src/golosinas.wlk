@@ -20,6 +20,19 @@ class Bombon {
 	method sabor() { return frutilla }
 	method libreGluten() { return true }
 }
+class BombonesDuros inherits Bombon{
+	override method mordisco(){peso = peso - 1}
+	method dureza(){if(peso >0 12){
+		return 3
+	}
+		else if(peso < 8 and peso >12 ){
+			return 2
+		}
+		else{
+			return 1
+		}
+	}
+}
 
 
 class Alfajor {
@@ -34,14 +47,18 @@ class Alfajor {
 
 class Caramelo {
 	var peso = 5
-
+	var sabor
 	method precio() { return 12 }
 	method peso() { return peso }
 	method mordisco() { peso = peso - 1 }
-	method sabor() { return frutilla }
+	method sabor() { return sabor }
 	method libreGluten() { return true }
 }
-
+class CarameloRellenoDeChocolate inherits Caramelo{
+	override method  mordisco() {sabor = chocolate}
+	override method precio() {return 13}
+	
+}
 
 class Chupetin {
 	var peso = 7
@@ -73,6 +90,11 @@ class Oblea {
 	}	
 	method sabor() { return vainilla }
 	method libreGluten() { return false }
+}
+class ObleaCrujiente inherits Oblea{
+	var mordiscos = 0
+	method estaDebil(){return mordiscos < 3}
+	 
 }
 
 class Chocolatin {
